@@ -32,7 +32,7 @@ console.log("정렬 1위:", sorted[0].title, "/ 원본 1번:", movies[0].title);
 function yearsSince(dateStr) {
     return new Date().getFullYear() - new Date(dateStr).getFullYear();
 }
-console.log(yearsSince(movies[0].date) + "년 전 개봉");
+console.log(yearsSince(best(movies).date) + "년 전 개봉");
 
 function posterUrl(path, size) {
     return "https://image.tmdb.org/t/p/" + size + path;
