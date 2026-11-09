@@ -1,4 +1,4 @@
-function average(list) {
+const average = (list) => {
     let sum = 0;
     for (const m of list) {
         sum += m.rating;
@@ -7,7 +7,7 @@ function average(list) {
 }
 console.log("평균:", average(movies));
 
-function best(list) {
+const best = (list) => {
     let top = list[0];
     for (const m of list) {
         if (m.rating > top.rating) {
@@ -18,23 +18,23 @@ function best(list) {
 }
 console.log("최고:", best(movies).title);
 
-function filterByRating(list, min) {
+const filterByRating = (list, min) => {
     return list.filter(m => m.rating >= min);
 }
 console.log("8점 이상:", filterByRating(movies, 8).length + "편");
 
-function sortByRating(list) {
+const sortByRating = (list) => {
     return [...list].sort((a, b) => b.rating - a.rating);
 }
 const sorted = sortByRating(movies);
 console.log("정렬 1위:", sorted[0].title, "/ 원본 1번:", movies[0].title);
 
-function yearsSince(dateStr) {
+const yearsSince = (dateStr) => {
     return new Date().getFullYear() - new Date(dateStr).getFullYear();
 }
 console.log(yearsSince(best(movies).date) + "년 전 개봉");
 
-function posterUrl(path, size) {
+const posterUrl = (path, size) => {
     return "https://image.tmdb.org/t/p/" + size + path;
 }
 console.log(posterUrl(movies[0].poster, "w342"));
